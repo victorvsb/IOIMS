@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from core.views.list_incidents import list_incidents
+from core.views.auth import auth_login, auth_logout
 
 urlpatterns = [
         path("admin/", admin.site.urls),
         path("", list_incidents, name="list_incidents"),
+        path("login/", auth_login, name="login"),
+        path("logout/", auth_logout, name="logout"),
     ]

@@ -9,13 +9,10 @@ class IncidentDTO:
     id: str
     title: str
     description: str
+    incident_type: str
     status: str
-    severity: str
+    reported_by: str
     created_at: datetime
-    updated_at: datetime
-    assigned_to: Optional[str] = None
-    priority: Optional[str] = None
-    due_date: Optional[datetime] = None
     
     def to_dict(self) -> dict:
         """Convert DTO to dictionary"""
@@ -23,13 +20,10 @@ class IncidentDTO:
             'id': self.id,
             'title': self.title,
             'description': self.description,
+            'incident_type': self.incident_type,
             'status': self.status,
-            'severity': self.severity,
-            'priority': self.priority,
-            'assigned_to': self.assigned_to,
+            'reported_by': self.reported_by,
             'created_at': self.created_at,
-            'updated_at': self.updated_at,
-            'due_date': self.due_date,
         }
     
     @classmethod
@@ -44,11 +38,8 @@ class IncidentDTO:
             id=model.id,
             title=model.title,
             description=model.description,
+            incident_type=model.incident_type,
             status=model.status,
-            severity=model.severity,
+            reported_by=model.reported_by,
             created_at=model.created_at,
-            updated_at=model.updated_at,
-            assigned_to=model.assigned_to,
-            priority=model.priority,
-            due_date=model.due_date,
         )

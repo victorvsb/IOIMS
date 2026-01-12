@@ -10,4 +10,4 @@ class IncidentSelector:
     
     @staticmethod
     def get_all_incidents() -> list[Incident]:
-        return [IncidentDTO(from_model=inc) for inc in Incident.objects.all()]
+        return [IncidentDTO.from_model(inc) for inc in Incident.objects.all()]
